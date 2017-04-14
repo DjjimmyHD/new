@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reddit Clone</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1>eyyyyyyy</h1>
+    <h6>looks like you made it</h6>
+<section class='submit-link'>
+  <form action='/add-link' method="post">
+
+    <div>
+      <label for="url">URL</label>
+    <input type="text" name="url" value="">
+    </div>
+    <div>
+        <label for="title">TITLE</label>
+    <input type="text" name="title" value="">
+    </div>
+    <button>submit</button>
+  </form>
+
+</section>
+<!-- <section class='upvote-link'>
+  <form action='/upvote-link' method="post">
+
+    <div>
+      <label for="votes">VOTES</label>
+    <input type="number" name="votes" value="">
+    </div>
+    <button>submit</button>
+  </form>
+
+</section> -->
+    <main>
+      {{#each data}}
+      <form class="upvote" action="/upvote-link" method="post">
+        <div>
+          <!-- <label for="votes">VOTES</label> -->
+        <input type="number" name="votes" value="">
+        </div>
+        <button>submit</button>
+        <!-- <button>U</button> -->
+
+      </form>
+        <!-- <span class="upvote">U</span> -->
+        <span class="votes">{{this.votes}}</span>
+        <form class="downvote" action="/downvote/{{this.id}}" method="post">
+        <button>D</button>
+
+        </form>
+        <!-- <span class="downvote">D</span> -->
+        <span class="title"><a href='{{this.url}}'>{{this.title}}</a></span>
+        {{/each}}
+    </main>
+  </body>
+</html>
