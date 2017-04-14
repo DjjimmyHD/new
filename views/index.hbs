@@ -1,68 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Reddit Clone</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/main.css">
-  </head>
-  <body>
+</head>
+
+<body>
+    <header>
+
     <h1>Fredd-it</h1>
     <h6>I made this</h6>
-<section class='submit-link'>
-  <form action='/add-link' method="post">
+    <section class='submit-link'>
+        <form action='/add-link' method="post">
 
-    <div class="row well">
-        <div class="col-md-8">
-      <label for="url">URL</label>
-    <input type="text" name="url" value="">
-        </div>
-    </div>
+            <div class="well">
 
-    <div class="well">
-        <label for="title">TITLE</label>
-    <input type="text" name="title" value="">
-    <br>
-    <button>submit</button>
-      </div>
-  </form>
+                <label for="url">URL</label>
+                <input type="text" name="url" value="">
+                <label for="title">TITLE</label>
+                <input type="text" name="title" value="">
 
-</section>
+                <button>submit</button>
 
-<!-- <section class='upvote-link'>
-  <form action='/upvote-link' method="post">
-
-    <div>
-      <label for="votes">VOTES</label>
-    <input type="number" name="votes" value="">
-    </div>
-    <button>submit</button>
-  </form>
-
-</section> -->
-    <main class="well">
-      <!-- {{#each data}} -->
-      <form class="upvote" action="/upvote-link/{{id}}" method="post">
-        <!-- <div> -->
-          <!-- <label for="votes">VOTES</label> -->
-        <!-- <input type="number" name="votes" value=""> -->
-        <!-- </div> -->
-        <button>U</button>
-        <!-- <button>U</button> -->
-
-      </form>
-        <!-- <span class="upvote">U</span> -->
-        <span class="votes">{{votes}}</span>
-        <form class="downvote" action="/downvote-link/{{id}}" method="post">
-          <!-- <div>
-            <!- <label for="votes">VOTES</label> -->
-          <!-- <input type="number" name="votes" value=""> -->
-          <!-- </div> -->
-          <button>D</button>
         </form>
-        <!-- <span class="downvote">D</span> -->
-        <span class="title"><a href='{{url}}'>{{title}}</a></span>
-        <!-- {{/each}} -->
+
+    </section>
+
+    <main>
+        {{#each data}}
+            <section class="well">
+                <form class="upvote" action="/upvote-link/{{id}}" method="post">
+
+                    <button><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
+
+                </form>
+
+                <span class="votes">{{votes}}</span>
+                <span class="title"><a href='{{url}}'>{{title}}</a></span>
+
+                <form class="downvote" action="/downvote-link/{{id}}" method="post">
+
+                    <button><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+                </form>
+            </section>
+            <br>
+        {{/each}}
     </main>
-  </body>
+</body>
+
 </html>
