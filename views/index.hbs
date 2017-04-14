@@ -35,25 +35,28 @@
 
 </section> -->
     <main>
-      {{#each data}}
-      <form class="upvote" action="/upvote-link" method="post">
+      <!-- {{#each data}} -->
+      <form class="upvote" action="/upvote-link/{{id}}" method="post">
         <div>
           <!-- <label for="votes">VOTES</label> -->
         <input type="number" name="votes" value="">
         </div>
-        <button>submit</button>
+        <button>U</button>
         <!-- <button>U</button> -->
 
       </form>
         <!-- <span class="upvote">U</span> -->
-        <span class="votes">{{this.votes}}</span>
-        <form class="downvote" action="/downvote/{{this.id}}" method="post">
-        <button>D</button>
-
+        <span class="votes">{{votes}}</span>
+        <form class="downvote" action="/downvote-link{{id}}" method="post">
+          <div>
+            <!-- <label for="votes">VOTES</label> -->
+          <input type="number" name="votes" value="">
+          </div>
+          <button>D</button>
         </form>
         <!-- <span class="downvote">D</span> -->
-        <span class="title"><a href='{{this.url}}'>{{this.title}}</a></span>
-        {{/each}}
+        <span class="title"><a href='{{url}}'>{{title}}</a></span>
+        <!-- {{/each}} -->
     </main>
   </body>
 </html>

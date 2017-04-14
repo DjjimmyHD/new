@@ -41,8 +41,15 @@ app.post('/add-link',(req,res) =>{
     })
 
 })
-app.post('/upvote-link',(req,res) =>{
-  linkQuery.add(req.body)
+app.post('/upvote-link/:id',(req,res) =>{
+  linkQuery.update(req.params.id)
+  .then(() => {
+      res.redirect('/')
+    })
+
+})
+app.post('/downvote-link/:id',(req,res) =>{
+  linkQuery.update(req.params.id)
   .then(() => {
       res.redirect('/')
     })
