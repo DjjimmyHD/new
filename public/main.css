@@ -3,5 +3,14 @@ main {
 
 }
 body {
+  background-color: #A2A9B2;
   width: 100%
+}
+
+header {
+  text-align: center;
+  background-color: #938FFF;
+}
+.submit-link{
+  margin: 1%;
 }
