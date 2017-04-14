@@ -4,11 +4,11 @@ exports.up = function(knex, Promise) {
         table.increments('id').primary();
         table.string('url')
         table.string('title');
-        table.integer('votes');
+        table.integer('votes').defaultTo(0);
   })
 };
 
 exports.down = function(knex, Promise) {
-    return kenx.schema.dropTableIfExists('reddit')
+    return knex.schema.dropTableIfExists('reddit')
 
 };

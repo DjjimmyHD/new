@@ -3,26 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>Reddit Clone</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-    <h1>eyyyyyyy</h1>
-    <h6>looks like you made it</h6>
+    <h1>Fredd-it</h1>
+    <h6>I made this</h6>
 <section class='submit-link'>
   <form action='/add-link' method="post">
 
-    <div>
+    <div class="row well">
+        <div class="col-md-8">
       <label for="url">URL</label>
     <input type="text" name="url" value="">
+        </div>
     </div>
-    <div>
+
+    <div class="well">
         <label for="title">TITLE</label>
     <input type="text" name="title" value="">
-    </div>
+    <br>
     <button>submit</button>
+      </div>
   </form>
 
 </section>
+
 <!-- <section class='upvote-link'>
   <form action='/upvote-link' method="post">
 
@@ -34,24 +40,24 @@
   </form>
 
 </section> -->
-    <main>
+    <main class="well">
       <!-- {{#each data}} -->
       <form class="upvote" action="/upvote-link/{{id}}" method="post">
-        <div>
+        <!-- <div> -->
           <!-- <label for="votes">VOTES</label> -->
-        <input type="number" name="votes" value="">
-        </div>
+        <!-- <input type="number" name="votes" value=""> -->
+        <!-- </div> -->
         <button>U</button>
         <!-- <button>U</button> -->
 
       </form>
         <!-- <span class="upvote">U</span> -->
         <span class="votes">{{votes}}</span>
-        <form class="downvote" action="/downvote-link{{id}}" method="post">
-          <div>
-            <!-- <label for="votes">VOTES</label> -->
-          <input type="number" name="votes" value="">
-          </div>
+        <form class="downvote" action="/downvote-link/{{id}}" method="post">
+          <!-- <div>
+            <!- <label for="votes">VOTES</label> -->
+          <!-- <input type="number" name="votes" value=""> -->
+          <!-- </div> -->
           <button>D</button>
         </form>
         <!-- <span class="downvote">D</span> -->
